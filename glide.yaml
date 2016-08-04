@@ -2,3 +2,5 @@ package: main
 import:
 - package: github.com/gorilla/mux
 - package: github.com/gorilla/context
+- package: gopkg.in/redis.v4
+- package: gopkg.in/bsm/ratelimit.v1
