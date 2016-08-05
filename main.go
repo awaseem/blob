@@ -22,5 +22,6 @@ func main() {
 func Handlers() *mux.Router {
 	r := mux.NewRouter()
 	r.HandleFunc("/status", handlers.Status)
+	r.HandleFunc("/createUser", handlers.CreateUser).Methods("POST")
 	return r
 }
