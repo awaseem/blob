@@ -1,7 +1,7 @@
 package helpers
 
-// CreateUser incoming request body for create user
-type CreateUser struct {
+// User incoming request body for create user
+type User struct {
 	Username string `json:"username"`
 	Password string `json:"password"`
 }

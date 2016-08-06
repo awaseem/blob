@@ -23,5 +23,6 @@ func Handlers() *mux.Router {
 	r := mux.NewRouter()
 	r.HandleFunc("/status", handlers.Status)
 	r.HandleFunc("/createUser", handlers.CreateUser).Methods("POST")
+	r.HandleFunc("/login", handlers.LoginUser).Methods("POST")
 	return r
 }
