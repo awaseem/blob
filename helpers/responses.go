@@ -7,10 +7,7 @@ import (
 
 // TokenRes response of jwt http call
 type TokenRes struct {
-	Payload token `json:"payload"`
-}
-type token struct {
-	Token string `json:"token"`
+	Payload Token `json:"payload"`
 }
 
 // Response set the body and status code

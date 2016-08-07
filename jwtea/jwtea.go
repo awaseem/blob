@@ -33,3 +33,20 @@ func Login(username string, password string) (string, error) {
 	}
 	return tokenResponse.Payload.Token, nil
 }
+
+// Check if token is valid return true otherwise false
+func Check(token string) bool {
+	userCred := helpers.Token{
+		Token: token,
+	}
+	b := new(bytes.Buffer)
+	if errEncode := json.NewEncoder(b).Encode(userCred); errEncode != nil {
+		return false
+	}
+	res, errRes := http.Post(constants.GetJWTeaConfig()+"/check", header, b)
+	if errRes != nil {
+		return false
+	}
+	defer res.Body.Close()
+	return true
+}
