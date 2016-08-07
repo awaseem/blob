@@ -5,6 +5,14 @@ import (
 	"net/http"
 )
 
+// TokenRes response of jwt http call
+type TokenRes struct {
+	Payload token `json:"payload"`
+}
+type token struct {
+	Token string `json:"token"`
+}
+
 // Response set the body and status code
 func Response(body interface{}, w http.ResponseWriter) {
 	json, err := json.Marshal(body)

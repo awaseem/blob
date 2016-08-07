@@ -8,10 +8,14 @@ import (
 // Default value
 const portC string = "3232"
 
+// redis constants
 const redisHostC string = "localhost"
 const redisPortC string = "6379"
 const redisPasswordC string = ""
 const redisDBC int = 0
+
+// jwtea constants
+const jwteaURLC string = "https://token.aliwaseem.com"
 
 // redis enviroment variables
 const redisHostEnv = "REDIS_HOST"
@@ -21,6 +25,9 @@ const redisDBEnv = "REDIS_DB"
 
 // port enviroment variables
 const portEnv = "PORT"
+
+// jwtea enviroment variables
+const jwteaURLEnv = "JWTEA_URL"
 
 // GetRedisConfig get config variables for redis
 func GetRedisConfig() (string, string, string, int) {
@@ -47,4 +54,13 @@ func GetPortConfig() string {
 		port = portC
 	}
 	return port
+}
+
+// GetJWTeaConfig get config variable for jwtea
+func GetJWTeaConfig() string {
+	url := os.Getenv(jwteaURLEnv)
+	if url == "" {
+		url = jwteaURLC
+	}
+	return url
 }
