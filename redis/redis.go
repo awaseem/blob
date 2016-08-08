@@ -20,8 +20,8 @@ func CreateClient() {
 }
 
 // Set set a key with the a value if that key does not exists
-func Set(key string, value []byte) (bool, error) {
-	return globalClient.SetNX(key, value, 0).Result()
+func Set(key string, value interface{}) (string, error) {
+	return globalClient.Set(key, value, 0).Result()
 }
 
 // Get get a value based on the key

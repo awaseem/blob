@@ -5,6 +5,17 @@ import (
 	"net/http"
 )
 
+// GetRes response of Get http handler
+type GetRes struct {
+	Value string `json:"value"`
+}
+
+// SetRes response of Set http handler
+type SetRes struct {
+	Key    string `json:"key"`
+	Status string `json:"status"`
+}
+
 // TokenRes response of jwt http call
 type TokenRes struct {
 	Payload Token `json:"payload"`
