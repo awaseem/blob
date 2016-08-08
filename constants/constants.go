@@ -36,13 +36,16 @@ func GetRedisConfig() (string, string, string, int) {
 	redisPassword := os.Getenv(redisPasswordEnv)
 	redisDB, err := strconv.Atoi(os.Getenv(redisDBEnv))
 	if err != nil {
-		redisDB = 0
-	}
-	if redisHost == "" && redisPort == "" && redisPassword == "" {
-		redisHost = redisHostC
-		redisPort = redisPortC
-		redisPassword = redisPasswordC
 		redisDB = redisDBC
+	}
+	if redisHost == "" {
+		redisHost = redisHostC
+	}
+	if redisPort == "" {
+		redisPort = redisPortC
+	}
+	if redisPassword == "" {
+		redisPassword = redisPasswordC
 	}
 	return redisHost, redisPort, redisPassword, redisDB
 }
