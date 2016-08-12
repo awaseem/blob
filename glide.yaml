@@ -4,6 +4,3 @@ import:
 - package: github.com/gorilla/context
 - package: gopkg.in/redis.v4
 - package: gopkg.in/bsm/ratelimit.v1
-- package: golang.org/x/crypto
-  subpackages:
-  - /bcrypt
