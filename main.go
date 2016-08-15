@@ -24,6 +24,7 @@ func Handlers() *mux.Router {
 	r.HandleFunc("/status", handlers.Status)
 	r.HandleFunc("/login", handlers.LoginUser).Methods("POST")
 	r.HandleFunc("/get/{key}", handlers.Get).Methods("GET")
+	r.HandleFunc("/get/search/{key}", handlers.GetSearch).Methods("GET")
 	r.HandleFunc("/set", handlers.Set).Methods("POST")
 	return r
 }

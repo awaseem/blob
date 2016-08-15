@@ -28,3 +28,16 @@ func Set(key string, value interface{}) (string, error) {
 func Get(key string) (string, error) {
 	return globalClient.Get(key).Result()
 }
+
+// SearchGet search for keys and then get all the results
+func SearchGet(key string) ([]interface{}, error) {
+	matchingKeys, matchingKeysErr := globalClient.Keys("*" + key + "*").Result()
+	if matchingKeysErr != nil {
+		return nil, matchingKeysErr
+	}
+	values, valueErr := globalClient.MGet(matchingKeys...).Result()
+	if valueErr != nil {
+		return nil, valueErr
+	}
+	return values, nil
+}

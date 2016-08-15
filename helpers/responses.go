@@ -10,6 +10,11 @@ type GetRes struct {
 	Value string `json:"value"`
 }
 
+// GetSearchRes response of the GetSearch http handler
+type GetSearchRes struct {
+	Value []interface{} `json:"value"`
+}
+
 // SetRes response of Set http handler
 type SetRes struct {
 	Key    string `json:"key"`

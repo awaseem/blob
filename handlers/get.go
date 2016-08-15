@@ -3,6 +3,7 @@ package handlers
 import (
 	"blob/helpers"
 	"blob/redis"
+	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -17,7 +18,18 @@ func Get(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Failed to get value", http.StatusBadRequest)
 		return
 	}
-	helpers.Response(helpers.GetRes{
-		Value: getRed,
-	}, w)
+	helpers.Response(helpers.GetRes{Value: getRed}, w)
+}
+
+// GetSearch http handler for redis get search
+func GetSearch(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	searchKey := vars["key"]
+	getRed, errRed := redis.SearchGet(searchKey)
+	if errRed != nil {
+		fmt.Println(errRed)
+		http.Error(w, "Failed to get value", http.StatusBadRequest)
+		return
+	}
+	helpers.Response(helpers.GetSearchRes{Value: getRed}, w)
 }
