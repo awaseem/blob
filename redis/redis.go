@@ -31,7 +31,7 @@ func Get(key string) (string, error) {
 
 // SearchGet search for keys and then get all the results
 func SearchGet(key string) ([]interface{}, error) {
-	matchingKeys, matchingKeysErr := globalClient.Keys("*" + key + "*").Result()
+	matchingKeys, matchingKeysErr := globalClient.Keys(key + "*").Result()
 	if matchingKeysErr != nil {
 		return nil, matchingKeysErr
 	}
