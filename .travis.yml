@@ -11,7 +11,7 @@ install:
 services:
     - docker
 before_install:
-    - export GOPATH=$HOME/gopath/src/github.com/awaseem/blob
+    - export GOPATH=$HOME/gopath/src/github.com
     - sleep 15
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 after_success:
