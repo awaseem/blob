@@ -5,12 +5,12 @@ go:
 install:
     - go get github.com/gorilla/mux
     - go get github.com/gorilla/context
+    - go get github.com/awaseem/blob
     - go get gopkg.in/redis.v4
     - go get gopkg.in/bsm/ratelimit.v1
 services:
     - docker
 before_install:
-    - export GOPATH=$HOME/gopath/src/github.com/awaseem/blob
     - sleep 15
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 after_success:
