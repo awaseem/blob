@@ -1,7 +1,7 @@
 package redis
 
 import (
-	"blob/constants"
+	"github.com/awaseem/blob/constants"
 
 	redis "gopkg.in/redis.v4"
 )

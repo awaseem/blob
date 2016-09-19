@@ -1,11 +1,12 @@
 package handlers
 
 import (
-	"blob/helpers"
-	"blob/jwtea"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/awaseem/blob/helpers"
+	"github.com/awaseem/blob/jwtea"
 )
 
 // LoginUser login user for writes

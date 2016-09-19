@@ -1,10 +1,11 @@
 package handlers
 
 import (
-	"blob/helpers"
-	"blob/redis"
 	"fmt"
 	"net/http"
+
+	"github.com/awaseem/blob/helpers"
+	"github.com/awaseem/blob/redis"
 
 	"github.com/gorilla/mux"
 )

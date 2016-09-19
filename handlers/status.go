@@ -1,8 +1,9 @@
 package handlers
 
 import (
-	"blob/helpers"
 	"net/http"
+
+	"github.com/awaseem/blob/helpers"
 )
 
 // Status send the status of the service

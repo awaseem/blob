@@ -1,12 +1,13 @@
 package handlers
 
 import (
-	"blob/helpers"
-	"blob/jwtea"
-	"blob/redis"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+
+	"github.com/awaseem/blob/helpers"
+	"github.com/awaseem/blob/jwtea"
+	"github.com/awaseem/blob/redis"
 )
 
 // Set http handler for redis set

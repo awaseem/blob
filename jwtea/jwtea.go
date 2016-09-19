@@ -1,11 +1,13 @@
 package jwtea
 
 import (
-	"blob/constants"
-	"blob/helpers"
 	"bytes"
 	"encoding/json"
 	"net/http"
+
+	"github.com/awaseem/blob/helpers"
+
+	"github.com/awaseem/blob/constants"
 )
 
 const tokenURL string = "http://localhost:8000/create"

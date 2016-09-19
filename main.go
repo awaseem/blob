@@ -1,11 +1,14 @@
 package main
 
 import (
-	"blob/constants"
-	"blob/handlers"
-	"blob/redis"
 	"fmt"
 	"net/http"
+
+	"github.com/awaseem/blob/redis"
+
+	"github.com/awaseem/blob/handlers"
+
+	"github.com/awaseem/blob/constants"
 
 	"github.com/gorilla/mux"
 )
