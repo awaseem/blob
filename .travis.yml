@@ -2,6 +2,7 @@ sudo: false
 language: go
 go:
     - 1.6
+go_import_path: github.com
 install:
     - go get github.com/gorilla/mux
     - go get github.com/gorilla/context
@@ -10,6 +11,7 @@ install:
 services:
     - docker
 before_install:
+    - export $HOME/gopath/src/github.com/awaseem/blob
     - sleep 15
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 after_success:
