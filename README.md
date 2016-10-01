@@ -3,6 +3,7 @@
 </p>
 
 # Blob
+[![Go Report Card](https://goreportcard.com/badge/github.com/awaseem/blob)](https://goreportcard.com/report/github.com/awaseem/blob)
 
 A simple storage API that using Redis allowing for extremely fast response times!
 
