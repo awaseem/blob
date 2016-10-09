@@ -4,3 +4,9 @@ import:
 - package: github.com/gorilla/context
 - package: gopkg.in/redis.v4
 - package: gopkg.in/bsm/ratelimit.v1
+- package: github.com/gorilla/handlers
+- package: github.com/rs/cors
+- package: github.com/rs/xhandler
+- package: golang.org/x/net
+  subpackages:
+  - /context

@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/awaseem/blob/redis"
+	"github.com/rs/cors"
 
 	"github.com/awaseem/blob/handlers"
 
@@ -18,7 +19,8 @@ func main() {
 	// create redis client
 	redis.CreateClient()
 	// start server
-	fmt.Println(http.ListenAndServe(":"+constants.GetPortConfig(), Handlers()))
+	handler := cors.Default().Handler(Handlers())
+	fmt.Println(http.ListenAndServe(":"+constants.GetPortConfig(), handler))
 }
 
 // Handlers all route handlers for this service

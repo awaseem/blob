@@ -7,6 +7,10 @@ install:
     - go get github.com/gorilla/context
     - go get gopkg.in/redis.v4
     - go get gopkg.in/bsm/ratelimit.v1
+    - go get github.com/gorilla/handlers
+    - go get github.com/rs/cors
+    - go get github.com/rs/xhandler
+    - go get golang.org/x/net    
 services:
     - docker
 before_install:
