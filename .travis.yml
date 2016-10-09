@@ -10,7 +10,7 @@ install:
     - go get github.com/gorilla/handlers
     - go get github.com/rs/cors
     - go get github.com/rs/xhandler
-    - go get golang.org/x/net    
+    - go get golang.org/x/net/context    
 services:
     - docker
 before_install:
